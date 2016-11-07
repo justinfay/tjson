@@ -26,8 +26,6 @@ def _make_test(example):
 
 
 # Create individual test functions for each example.
-_tests = {}
 for example in get_examples():
     test = _make_test(example)
-    _tests[test.__name__] = test
-globals().update(_tests)
+    globals()[test.__name__] = test
